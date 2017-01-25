@@ -9,12 +9,12 @@ public class Agent {
 		}
 	}
 
-	public void left(){
-		
+	public int left(int position){
+		return --position;
 	}
 	
-	public void right(){
-		
+	public int right(int position){
+		return ++position;
 	}
 	
 	public void suck(Tile t){

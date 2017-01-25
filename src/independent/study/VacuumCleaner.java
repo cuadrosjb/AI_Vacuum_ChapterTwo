@@ -32,7 +32,7 @@ public class VacuumCleaner {
 
 			}
 			moves++;
-			System.out.println("index: " + index);
+			//System.out.println("index: " + index);
 		}
 
 		System.out.println("Is the floor cleared? " + floor.floorCleared() + " It took " + moves + " moves.");
