@@ -1,11 +1,16 @@
-package independent.study;
+package independent.study.complex;
 
 public class Tile {
 
+	
 	private boolean clean;
 	
 	public Tile(){
 		clean = true;
+	}
+	
+	public Tile(boolean clean){
+		this.clean = clean;
 	}
 
 	public boolean isClean() {
@@ -15,10 +20,5 @@ public class Tile {
 	public void setClean(boolean clean) {
 		this.clean = clean;
 	}
-
-	@Override
-	public String toString() {
-		return "Tile [clean=" + clean + "]";
-	}
-
+	
 }

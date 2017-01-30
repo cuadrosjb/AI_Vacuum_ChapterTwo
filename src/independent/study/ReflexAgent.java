@@ -19,11 +19,14 @@ public class ReflexAgent {
 				index = agent.right(index);
 				//System.out.println("Right index: " + index);
 			} catch (Exception e) {
-				System.out.println("We bumped into a wall");
+				//System.out.println("We bumped into a wall");
 				index = agent.left(index);
 				//System.out.println("Left index: " + index);
 			}
 			moves++;
+			if(moves == 1000){
+				break;
+			}
 		}
 
 		System.out.println("Is the floor cleared? " + floor.floorCleared() + " It took " + moves + " moves.");
