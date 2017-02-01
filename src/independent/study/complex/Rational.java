@@ -28,33 +28,27 @@ public class Rational implements Agent {
 
 	@Override
 	public void up() {
-		// TODO Auto-generated method stub
 		y++;
 	}
 
 	@Override
 	public void down() {
-		// TODO Auto-generated method stub
 		y--;
 	}
 
 	@Override
 	public void left() {
-		// TODO Auto-generated method stub
 		x--;
 	}
 
 	@Override
 	public void right() {
-		// TODO Auto-generated method stub
 		x++;
 	}
 
 	@Override
 	public void clean(Tile tile) {
-		// TODO Auto-generated method stub
 
-		System.out.println("Cleaning Tile..");
 		tile.setClean(true);
 
 	}
@@ -63,49 +57,26 @@ public class Rational implements Agent {
 		rn = new Random();
 		int r = rn.nextInt(4);
 
-		// System.out.println("rr: " + r);
-
-		// int r = (int) (Math.random() * 3 + 1);
-
 		if (r == 0) {
-			// System.out.println("going up()");
 			up();
 		} else if (r == 1) {
-			// System.out.println("going left()");
 			left();
 		} else if (r == 2) {
-			// System.out.println("going down()");
 			down();
 		} else if (r == 3) {
-			// System.out.println("going right()");
 			right();
 		}
 	}
 
 	@Override
 	public void move() {
-		// TODO Auto-generated method stub
-
-		// System.out.println("Bumped: " + bumped);
 
 		if (bumped) {
-			// System.out.println("We have Bumped");
-			//
-			// System.out.println("One Tile at pX: " + pX + " pY: " + pY + " has
-			// been cleaned");
-			// System.out.println("One Tile at X: " + x + " Y: " + y + " has
-			// been cleaned");
 			possibleMoves();
-			// pY = y;
-			// pX = x;
 
 			this.bumped = false;
 
 		} else {
-			// System.out.println("--One Tile at pX: " + pX + " pY: " + pY + "
-			// has been cleaned");
-			// System.out.println("--One Tile at X: " + x + " Y: " + y + " has
-			// been cleaned");
 			pY = y;
 			pX = x;
 
@@ -116,13 +87,6 @@ public class Rational implements Agent {
 
 	private void possibleMoves() {
 
-		// All possible moves
-
-		// System.out.println("possibleMoves pX: " + pX + " pY: " + pY + " has
-		// been cleaned");
-		// System.out.println("possibleMoves X: " + x + " Y: " + y + " has been
-		// cleaned");
-
 		if (x > pX) {
 			left();
 			x = pX;
@@ -131,18 +95,11 @@ public class Rational implements Agent {
 			rn = new Random();
 			int r = rn.nextInt(4);
 
-			// System.out.println("rr: " + r);
-
-			// int r = (int) (Math.random() * 3 + 1);
-
 			if (r == 0) {
-				// System.out.println("going up()");
 				up();
 			} else if (r == 1) {
-				// System.out.println("going left()");
 				left();
 			} else if (r == 2) {
-				// System.out.println("going down()");
 				down();
 			}
 
@@ -153,18 +110,11 @@ public class Rational implements Agent {
 			rn = new Random();
 			int r = rn.nextInt(3);
 
-			// System.out.println("rr: " + r);
-
-			// int r = (int) (Math.random() * 3 + 1);
-
 			if (r == 0) {
-				// System.out.println("going up()");
 				up();
 			} else if (r == 1) {
-				// System.out.println("going down()");
 				down();
 			} else if (r == 2) {
-				// System.out.println("going right()");
 				right();
 			}
 
@@ -175,18 +125,11 @@ public class Rational implements Agent {
 			rn = new Random();
 			int r = rn.nextInt(3);
 
-			// System.out.println("rr: " + r);
-
-			// int r = (int) (Math.random() * 3 + 1);
-
 			if (r == 0) {
-				// System.out.println("going left()");
 				left();
 			} else if (r == 1) {
-				// System.out.println("going down()");
 				down();
 			} else if (r == 2) {
-				// System.out.println("going right()");
 				right();
 			}
 
@@ -197,39 +140,26 @@ public class Rational implements Agent {
 			rn = new Random();
 			int r = rn.nextInt(3);
 
-			// System.out.println("rr: " + r);
-
-			// int r = (int) (Math.random() * 3 + 1);
-
 			if (r == 0) {
-				// System.out.println("going up()");
 				up();
 			} else if (r == 1) {
-				// System.out.println("going left()");
 				left();
 			} else if (r == 2) {
-				// System.out.println("going right()");
 				right();
 			}
 
 		}
 
-		// System.out.println("---");
-
-		// pX = x;
-		// pY = y;
-
 	}
 
 	private void generateInitailLocation() {
-		x = (int) (Math.random() * 9);
-		y = (int) (Math.random() * 9);
+		x = (int) (Math.random() * 3);
+		y = (int) (Math.random() * 3);
 
 		if (x == y) {
-			y = (int) (Math.random() * 9);
+			y = (int) (Math.random() * 3);
 		}
 
-		System.out.println("x: " + x + " y: " + y);
 	}
 
 	public int getX() {
