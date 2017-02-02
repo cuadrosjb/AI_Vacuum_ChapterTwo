@@ -2,8 +2,17 @@ package independent.study.complex;
 
 public class Obstacle {
 	
-	public boolean wall;
+	private boolean wall;
+	private boolean visited;
 	
+	public boolean isVisited() {
+		return visited;
+	}
+
+	public void setVisited(boolean visited) {
+		this.visited = visited;
+	}
+
 	public Obstacle(){
 		
 	}
