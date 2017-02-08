@@ -2,6 +2,13 @@ package independent.study.complex;
 
 import java.util.Random;
 
+/**
+ * 
+ * Randomized Agent class that cleans the Floor Object
+ * 
+ * @author Jeffrey Cuadros
+ *
+ */
 public class Rational implements Agent {
 
 	private boolean bumped = false;
@@ -22,6 +29,10 @@ public class Rational implements Agent {
 	private int pX = -1;
 	private int pY = -1;
 
+	/**
+	 * Constructor that sets up the Agent
+	 * 
+	 */
 	public Rational() {
 		generateInitailLocation();
 	}
@@ -53,6 +64,10 @@ public class Rational implements Agent {
 
 	}
 
+	/**
+	 *
+	 * Generates the next random move
+	 */
 	public void ramdonAccion() {
 		rn = new Random();
 		int r = rn.nextInt(4);
@@ -68,6 +83,9 @@ public class Rational implements Agent {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see independent.study.complex.Agent#move()
+	 */
 	@Override
 	public void move() {
 
@@ -85,6 +103,11 @@ public class Rational implements Agent {
 
 	}
 
+	/**
+	 * 
+	 * Since we have bumped, we need to exclude one move from our possible moves
+	 * 
+	 */
 	private void possibleMoves() {
 
 		if (x > pX) {
@@ -152,6 +175,11 @@ public class Rational implements Agent {
 
 	}
 
+	/**
+	 * 
+	 * Sets up agent initial random position 
+	 * 
+	 */
 	private void generateInitailLocation() {
 		x = (int) (Math.random() * 3);
 		y = (int) (Math.random() * 3);

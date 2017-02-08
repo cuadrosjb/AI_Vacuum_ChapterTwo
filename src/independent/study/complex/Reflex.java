@@ -105,11 +105,11 @@ public class Reflex implements Agent {
 	}
 
 	private void generateInitailLocation() {
-		x = (int) (Math.random() * 9);
-		y = (int) (Math.random() * 9);
+		x = (int) (Math.random() * 3);
+		y = (int) (Math.random() * 3);
 
 		if (x == y) {
-			y = (int) (Math.random() * 9);
+			y = (int) (Math.random() * 3);
 		}
 
 		System.out.println("x: " + x + " y: " + y);
