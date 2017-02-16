@@ -4,7 +4,7 @@ import java.util.Random;
 
 /**
  * 
- * Randomized Agent class that cleans the Floor Object
+ * Agent with a random move generator class that cleans the Floor Object
  * 
  * @author Jeffrey Cuadros
  *
@@ -181,11 +181,11 @@ public class Rational implements Agent {
 	 * 
 	 */
 	private void generateInitailLocation() {
-		x = (int) (Math.random() * 3);
-		y = (int) (Math.random() * 3);
+		x = (int) (Math.random() * 4);
+		y = (int) (Math.random() * 4);
 
 		if (x == y) {
-			y = (int) (Math.random() * 3);
+			y = (int) (Math.random() * 4);
 		}
 
 	}

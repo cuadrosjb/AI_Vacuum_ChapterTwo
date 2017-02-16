@@ -1,6 +1,11 @@
 package independent.study.complex;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
+
+import independent.jdbc.mysql.MySQLConnection;
 
 /**
  * @author Jeffrey Cuadros
@@ -16,29 +21,29 @@ public class Environment {
 	 */
 	public static void main(String[] args) {
 		
-//		Connection conn = new MySQLConnection().getConnection();
-//		PreparedStatement ps;
-//		
-//		String  sqlQuery = "Insert into ai_vacuum_cleaner(type, moves) VALUES ('Reflex', ?) ";
+		Connection conn = new MySQLConnection().getConnection();
+		PreparedStatement ps;
 		
-//		try {
-//			 ps = conn.prepareStatement(sqlQuery);
+		String  sqlQuery = "Insert into ai_vacuum_cleaner(type, moves) VALUES ('Random', ?) ";
+		
+		try {
+			 ps = conn.prepareStatement(sqlQuery);
 			int adding = 0; 
 			int trials = 1000;
 
 			for(int i = 0 ; i < trials ; i++){
-//				ps.setInt(1, cleanRoom());
-				adding += cleanRoom();
-//				ps.executeUpdate();
+				ps.setInt(1, cleanRoom());
+//				adding += cleanRoom();
+				ps.executeUpdate();
 			}
 			
-			System.out.println("AVG moves : " + adding/trials);
+//			System.out.println("AVG moves : " + adding/trials);
 			
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 
 	}
@@ -55,8 +60,8 @@ public class Environment {
 	public static int cleanRoom() {
 		Floor floor = new Floor();
 
-//		Rational agentReflex = new Rational();
-		ReflexState agentReflex = new ReflexState();
+		Rational agentReflex = new Rational();
+//		ReflexState agentReflex = new ReflexState();
 
 		// printFloorState(floor);
 
